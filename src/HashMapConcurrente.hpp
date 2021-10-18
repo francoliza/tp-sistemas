@@ -6,6 +6,7 @@
 #include <atomic>
 #include <string>
 #include <vector>
+#include <semaphore.h>
 
 #include "ListaAtomica.hpp"
 
@@ -28,6 +29,9 @@ class HashMapConcurrente {
     ListaAtomica<hashMapPair> *tabla[HashMapConcurrente::cantLetras];
 
     static unsigned int hashIndex(std::string clave);
+    std::mutex mutexIncrementar;
+
+    sem_t incrementarYMaximo;
 };
 
 #endif  /* HMC_HPP */

@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall
-LDFLAGS = -lpthread
+LDFLAGS = -lpthread -lrt
 
 BUILD_DIR = ./build
 
